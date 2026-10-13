@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Afterglow by Halflight</title>
+<meta name="description" content="Afterglow: pull back, let go, and fling a little ember up a cave that never ends. Free on Android, Windows, iPhone, iPad and Mac.">
+<meta name="theme-color" content="#0b0620">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-title" content="Afterglow">
+<meta property="og:title" content="Afterglow by Halflight">
+<meta property="og:description" content="Pull back, let go, and fling a little ember up a cave that never ends.">
+<meta property="og:image" content="icons/icon-512.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+@font-face { font-family: "Halflight Pixel"; src: url(data:font/woff;base64,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) format("woff"); font-weight: 100 500; font-display: swap; }
+@font-face { font-family: "Halflight Pixel"; src: url(data:font/woff;base64,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) format("woff"); font-weight: 600 900; font-display: swap; }
+/* An arcade cabinet at night: a marquee with the game running in a phone, a stage-select strip of
+   worlds, and a download plate like the instructions printed on a coin-op. Neon on deep violet. */
+:root {
+  color-scheme: dark;
+  --night: #0b0620;
+  --night-2: #140b33;
+  --ink: #f4ecff;
+  --dim: #b4a6d6;
+  --faint: #7d6fa3;
+  --magenta: #ff4fd8;
+  --cyan: #4fe3ff;
+  --ember: #ffb35a;
+  --green: #7be3b4;
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-edge: rgba(255, 255, 255, 0.14);
+  --f-pixel: "Halflight Pixel", "Courier New", ui-monospace, monospace;
+  --f-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gutter: clamp(16px, 4vw, 40px);
+  --max: 1160px;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--night); color: var(--ink); font: 17px/1.6 var(--f-body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
+h1, h2, h3 { font-family: var(--f-pixel); font-weight: 700; line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: 0.01em; }
+p { margin: 0; }
+.eyebrow { font-family: var(--f-pixel); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); }
+.lead { color: var(--dim); max-width: 58ch; }
+
+/* ---------- top bar ---------- */
+.bar { position: sticky; top: 0; z-index: 20; padding-top: env(safe-area-inset-top, 0px); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); background: rgba(11, 6, 32, 0.62); border-bottom: 1px solid var(--glass-edge); }
+.bar .wrap { display: flex; align-items: center; gap: 16px; height: 62px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--f-pixel); font-weight: 700; font-size: 20px; }
+.brand img { width: 34px; height: 34px; border-radius: 9px; }
+.bar nav { margin-left: auto; display: flex; gap: 22px; font-family: var(--f-pixel); font-size: 14px; }
+.bar nav a { text-decoration: none; color: var(--dim); }
+.bar nav a:hover { color: var(--ink); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 14px; font-family: var(--f-pixel); font-weight: 700; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; cursor: pointer; border: 1px solid var(--glass-edge); background: var(--glass); color: var(--ink); transition: transform 0.12s ease, box-shadow 0.2s ease; text-align: center; }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: scale(0.98); }
+.btn.hot { background: linear-gradient(180deg, #ffd39a, var(--ember) 45%, #e0782a); color: #2a1406; border-color: #ffe0b0; box-shadow: 0 0 0 1px rgba(255, 179, 90, 0.3), 0 10px 34px rgba(255, 150, 60, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+.btn.sm { min-height: 40px; padding: 0 16px; font-size: 14px; border-radius: 11px; }
+.btn svg { width: 20px; height: 20px; flex: 0 0 auto; }
+.btn .meta { display: block; font-size: 11px; letter-spacing: 0.06em; opacity: 0.75; }
+
+/* ---------- hero ---------- */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--glass-edge); }
+#sky { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(24px, 5vw, 64px); align-items: center; padding-block: clamp(36px, 7vw, 88px); }
+.logo { font-family: var(--f-pixel); font-weight: 800; font-size: clamp(44px, 7vw, 90px); line-height: 0.95; white-space: nowrap; letter-spacing: 0.01em;
+  background: linear-gradient(180deg, #fff 0%, #ffe6f8 40%, #ffb35a 58%, #ff4fd8 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 24px rgba(255, 79, 216, 0.45)) drop-shadow(0 4px 0 rgba(40, 10, 60, 0.9)); margin: 10px 0 18px; }
+.by { font-family: var(--f-pixel); font-size: 14px; letter-spacing: 0.2em; color: var(--dim); text-transform: uppercase; }
+.hero .lead { font-size: clamp(17px, 1.6vw, 20px); margin-bottom: 26px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-note { margin-top: 12px; font-size: 14px; color: var(--faint); min-height: 1.6em; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.chip { font-family: var(--f-pixel); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 10px; border-radius: 8px; background: rgba(79, 227, 255, 0.08); border: 1px solid rgba(79, 227, 255, 0.3); color: #c8f6ff; }
+.phone { position: relative; justify-self: center; width: min(330px, 78vw); aspect-ratio: 9 / 19.5; max-width: 100%; border-radius: 44px; padding: 12px; background: linear-gradient(160deg, #3a2a66, #120a2a 40%, #2a1a4f); box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08), 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 79, 216, 0.25); }
+.phone::before { content: ""; position: absolute; top: 20px; left: 50%; width: 90px; height: 24px; transform: translateX(-50%); background: #05030c; border-radius: 14px; z-index: 2; }
+.phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 33px; background: #120a2a; }
+.phone .tag { position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--f-pixel); font-size: 12px; padding: 6px 12px; border-radius: 10px; background: #1a0f3a; border: 1px solid var(--glass-edge); color: var(--dim); }
+
+/* ---------- sections ---------- */
+section { padding-block: clamp(56px, 8vw, 104px); }
+.sec-head { display: grid; gap: 14px; margin-bottom: clamp(28px, 4vw, 44px); }
+.sec-head h2 { font-size: clamp(30px, 4.6vw, 52px); }
+
+.feats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.feat { padding: 22px; border-radius: 18px; background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)); border: 1px solid var(--glass-edge); display: grid; gap: 10px; align-content: start; min-width: 0; }
+.feat .ico { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: rgba(255, 79, 216, 0.12); border: 1px solid rgba(255, 79, 216, 0.35); color: var(--magenta); }
+.feat .ico svg { width: 24px; height: 24px; }
+.feat h3 { font-size: 19px; }
+.feat p { color: var(--dim); font-size: 15.5px; }
+.feat .num { font-family: var(--f-pixel); color: var(--ember); font-size: 34px; line-height: 1; }
+
+/* the stage-select strip */
+.stages { display: flex; gap: 16px; overflow-x: auto; padding: 6px 4px 22px; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--magenta) transparent; }
+.stage { flex: 0 0 auto; width: 210px; scroll-snap-align: start; display: grid; gap: 10px; margin: 0; }
+.stage .shot { border-radius: 20px; overflow: hidden; border: 1px solid var(--glass-edge); aspect-ratio: 9 / 19.5; background: #120a2a; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45); }
+.stage .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.stage:hover .shot img { transform: scale(1.04); }
+.stage b { font-family: var(--f-pixel); font-size: 15px; }
+.stage span { color: var(--dim); font-size: 14px; line-height: 1.4; }
+.more-worlds { color: var(--dim); font-size: 15px; margin-top: 6px; }
+
+/* how to play: a real sequence */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: s; }
+.step { padding: 22px; border-radius: 18px; border: 1px dashed rgba(79, 227, 255, 0.35); display: grid; gap: 8px; align-content: start; min-width: 0; }
+.step::before { counter-increment: s; content: counter(s); font-family: var(--f-pixel); font-weight: 800; font-size: 40px; color: var(--cyan); line-height: 1; text-shadow: 0 0 18px rgba(79, 227, 255, 0.5); }
+.step h3 { font-size: 18px; }
+.step p { color: var(--dim); font-size: 15.5px; }
+
+/* the download plate: one cabinet per device */
+.plate { border-radius: 24px; border: 1px solid rgba(255, 179, 90, 0.4); background: linear-gradient(160deg, rgba(255, 179, 90, 0.1), rgba(255, 79, 216, 0.06) 60%, rgba(255, 255, 255, 0.02)); padding: clamp(20px, 4vw, 40px); display: grid; gap: 24px; }
+.plats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.plat { position: relative; display: grid; gap: 14px; align-content: start; padding: 22px; border-radius: 18px; background: rgba(11, 6, 32, 0.55); border: 1px solid var(--glass-edge); min-width: 0; }
+.plat.mine { border-color: var(--ember); box-shadow: 0 0 0 1px var(--ember), 0 0 40px rgba(255, 179, 90, 0.18); }
+.plat .you { position: absolute; top: -11px; right: 18px; font-family: var(--f-pixel); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 7px; background: var(--ember); color: #2a1406; display: none; }
+.plat.mine .you { display: block; }
+.plat-h { display: flex; align-items: center; gap: 14px; }
+.plat-h .ico { width: 48px; height: 48px; flex: 0 0 48px; border-radius: 14px; display: grid; place-items: center; background: rgba(79, 227, 255, 0.1); border: 1px solid rgba(79, 227, 255, 0.35); color: var(--cyan); }
+.plat-h .ico svg { width: 26px; height: 26px; }
+.plat-h h3 { font-size: 21px; }
+.plat-h .kind { font-family: var(--f-pixel); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ember); margin-top: 4px; }
+.plat .acts { display: flex; flex-wrap: wrap; gap: 10px; }
+.plat .acts .btn { flex: 1 1 auto; }
+.plat ol { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; color: var(--dim); font-size: 15.5px; }
+.plat ol b { color: var(--ink); }
+.plat .req { font-size: 13.5px; color: var(--faint); }
+.plat .why { font-size: 14.5px; color: var(--dim); padding: 10px 12px; border-radius: 12px; background: rgba(79, 227, 255, 0.06); border: 1px dashed rgba(79, 227, 255, 0.3); }
+.kbd { font-family: var(--f-pixel); font-size: 13px; padding: 2px 7px; border-radius: 6px; border: 1px solid var(--glass-edge); background: rgba(255, 255, 255, 0.06); white-space: nowrap; color: var(--ink); }
+.plate-foot { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; color: var(--dim); font-size: 15px; }
+.plate-foot .links { display: flex; flex-wrap: wrap; gap: 10px; }
+.status { font-family: var(--f-pixel); font-size: 13px; color: var(--cyan); min-height: 1.4em; }
+
+/* faq */
+.faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; }
+.faq details { border-bottom: 1px solid var(--glass-edge); padding: 14px 0; }
+.faq summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--f-pixel); color: var(--magenta); }
+.faq details[open] summary::after { content: "-"; }
+.faq p { color: var(--dim); margin-top: 8px; font-size: 15.5px; }
+
+footer { border-top: 1px solid var(--glass-edge); padding-block: 36px calc(36px + env(safe-area-inset-bottom, 0px)); color: var(--faint); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; }
+footer .brand { font-size: 16px; color: var(--ink); }
+footer a { color: var(--dim); }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); }
+  .phone { width: min(290px, 74vw); }
+  .feats, .steps, .plats { grid-template-columns: minmax(0, 1fr); }
+  .faq { grid-template-columns: minmax(0, 1fr); }
+  .bar nav { display: none; }
+  .bar .wrap { gap: 10px; }
+  .bar .btn { margin-left: auto; }
+}
+@media (min-width: 861px) and (max-width: 1060px) { .feats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .logo { font-size: 40px; } .ctas .btn { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .stage .shot img { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="icons/icon-96.png" alt="" width="34" height="34">Afterglow</a>
+    <nav aria-label="Sections"><a href="#worlds">Worlds</a><a href="#play">How to play</a><a href="#download">Download</a><a href="#faq">FAQ</a></nav>
+    <a class="btn hot sm" href="#download">Download</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <div class="by">Halflight presents</div>
+        <h1 class="logo">Afterglow</h1>
+        <p class="lead">Pull back, let go, and fling a little ember up a cave that never ends. Catch the blooms, dodge what moves, and see how high you get before the Gloom rises to meet you.</p>
+        <div class="ctas">
+          <a class="btn hot" href="#download" id="hero-get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg><span id="hero-get-t">Download free</span></a>
+          <a class="btn" href="play.html"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>Play in your browser</a>
+        </div>
+        <p class="hero-note" id="hero-note">Android, Windows, iPhone, iPad and Mac.</p>
+        <div class="chips"><span class="chip">Free</span><span class="chip">No account</span><span class="chip">Plays offline</span><span class="chip">Phone, tablet and computer</span></div>
+      </div>
+      <figure class="phone" style="margin:0">
+        <img src="img/reel-arcade.webp" alt="Gameplay: the ember flings between glowing blooms in the Neon Arcade" width="360" height="779">
+        <figcaption class="tag">Live from the Neon Arcade</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">What's inside</div>
+        <h2>Simple to pick up. Hard to put down.</h2>
+        <p class="lead">One thumb, one move: drag to aim and let go to fling. Everything else is about where you fling to, and when.</p>
+      </div>
+      <div class="feats">
+        <div class="feat"><div class="num">23</div><h3>Worlds with their own rules</h3><p>Deep water that slows every fling, heat that saps your strength, cold that freezes you if you stay still, lodestones that bend your flight, and ground that quakes on a beat.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 9V3M14.5 13.5l5 3M9.5 13.5l-5 3"/></svg></div><h3>Cannons, sling wheels and zip lines</h3><p>Hop in a barrel and fire when it lines up. Ride a spinning arm and let go on the marker. Catch a handle and fly off the end of the cable.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></div><h3>Pick a boon as you climb</h3><p>Every few hundred metres the climb stops and offers three boons: a second air dash, a shield that comes back, a feather that lets you rise again.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v9H4zM4 10l2-5h12l2 5M10 13h4"/></svg></div><h3>Loot, jackpots and a daily wheel</h3><p>Smash crates on the way up, light three targets for a jackpot, and take one free spin of the prize wheel every day.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z"/></svg></div><h3>69 looks to unlock</h3><p>Patterned skins, hats, trails, catch bursts and companions, from a sprout leaf to a dragon. Win them from chests or buy them with shards. None of it changes how the game plays.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div><h3>A new climb every day</h3><p>Everyone gets the same Daily climb with a twist on top, like fog or low gravity. Keep a streak going and race your own ghost on any seed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="worlds" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Stage select</div>
+        <h2>The cave changes as you climb</h2>
+      </div>
+      <div class="stages" tabindex="0" aria-label="Worlds">
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-arcade.webp" alt="The Neon Arcade" width="480" height="1039"></div><b>The Neon Arcade</b><span>Glitch blocks hop between spots on a beat.</span></figure>
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-pinball.webp" alt="The Pinball Palace" width="480" height="1039"></div><b>The Pinball Palace</b><span>Light all three targets to ring the jackpot.</span></figure>
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-carnival.webp" alt="The Midnight Carnival" width="480" height="1039"></div><b>The Midnight Carnival</b><span>Cannons lob balls across the shaft.</span></figure>
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-hive.webp" alt="The Golden Hive" width="480" height="1039"></div><b>The Golden Hive</b><span>Sticky honey walls and a swarm on patrol.</span></figure>
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-glacier.webp" alt="The Glacier Heart" width="480" height="1039"></div><b>The Glacier Heart</b><span>Keep moving. The cold takes the still.</span></figure>
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-abyss.webp" alt="The Drowned Abyss" width="480" height="1039"></div><b>The Drowned Abyss</b><span>You float down here. Follow the glow.</span></figure>
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-storm.webp" alt="Stormspire" width="480" height="1039"></div><b>Stormspire</b><span>Lean into the gale. Count the thunder.</span></figure>
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-glowcap.webp" alt="Glowcap Grotto" width="480" height="1039"></div><b>Glowcap Grotto</b><span>Bounce the caps. Mind the spores.</span></figure>
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-mistveil.webp" alt="The Mistveil" width="480" height="1039"></div><b>The Mistveil</b><span>Trust the glow. The fog lies.</span></figure>
+        <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-verdant.webp" alt="The Verdant Veins" width="480" height="1039"></div><b>The Verdant Veins</b><span>Read the roots. Climb true.</span></figure>
+      </div>
+      <p class="more-worlds">Plus the Clockwork Spire, the Sunforge, the Lodestone, the Faultline, the Starwell and eight more.</p>
+    </div>
+  </section>
+
+  <section id="play" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">How to play</div>
+        <h2>Three moves to learn</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Drag back</h3><p>Touch anywhere and pull, like a slingshot. The dotted line shows exactly where you will land. A longer pull flings harder.</p></div>
+        <div class="step"><h3>Let go</h3><p>You stick to every bloom you touch. Rest there, watch the hazards keep their beat, and go when the way is clear.</p></div>
+        <div class="step"><h3>Dash in the air</h3><p>Drag again mid-flight to dash once. Time slows while you aim. It comes back every time you land.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" style="padding-top:0">
+    <div class="wrap">
+      <div class="plate">
+        <div class="sec-head" style="margin:0">
+          <div class="eyebrow" style="color:var(--ember)">Download</div>
+          <h2>Get Afterglow on every screen you own</h2>
+          <p class="lead">Free, with no account and no app store needed. Once it is installed it plays with no connection at all. Your device is highlighted below.</p>
+        </div>
+
+        <div class="plats">
+          <article class="plat" id="plat-android">
+            <span class="you">Your device</span>
+            <div class="plat-h">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+              <div><h3>Android</h3><div class="kind">APK for phones and tablets</div></div>
+            </div>
+            <div class="acts">
+              <a class="btn hot" data-dl="apk" href="https://github.com/count-halflight/AFTERGLOW/releases/latest/download/Afterglow.apk" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg><span>Download APK<span class="meta" data-size="apk"></span></span></a>
+            </div>
+            <ol>
+              <li>Tap <b>Download APK</b> and open the file when it finishes.</li>
+              <li>If Android asks, allow <b>Install unknown apps</b> for your browser, then go back.</li>
+              <li>Tap <b>Install</b>. If Play Protect says it does not recognise the app, tap <b>More details</b>, then <b>Install anyway</b>.</li>
+            </ol>
+            <p class="req">Android 7.0 or later. To update, download the new APK and install it over the old one.</p>
+          </article>
+
+          <article class="plat" id="plat-windows">
+            <span class="you">Your device</span>
+            <div class="plat-h">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+              <div><h3>Windows</h3><div class="kind">Installer for PCs and laptops</div></div>
+            </div>
+            <div class="acts">
+              <a class="btn hot" data-dl="setup" href="https://github.com/count-halflight/AFTERGLOW/releases/latest/download/Afterglow-Setup.exe" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg><span>Download for Windows<span class="meta" data-size="setup"></span></span></a>
+              <a class="btn sm" data-dl="portable" href="https://github.com/count-halflight/AFTERGLOW/releases/latest/download/Afterglow-Portable.exe" download>Portable, no install</a>
+            </div>
+            <ol>
+              <li>Run <b>Afterglow-Setup.exe</b>. It installs in a few seconds and adds a Start menu and desktop shortcut.</li>
+              <li>If Windows shows <b>Windows protected your PC</b>, click <b>More info</b>, then <b>Run anyway</b>.</li>
+              <li>Play with the mouse, or aim with <span class="kbd">arrows</span> and fling with <span class="kbd">Space</span>. <span class="kbd">F11</span> goes full screen.</li>
+            </ol>
+            <p class="req">Windows 10 or 11, 64-bit.</p>
+          </article>
+
+          <article class="plat" id="plat-ios">
+            <span class="you">Your device</span>
+            <div class="plat-h">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="3"/><circle cx="12" cy="18" r="1"/></svg></div>
+              <div><h3>iPhone and iPad</h3><div class="kind">Home Screen app</div></div>
+            </div>
+            <div class="acts">
+              <a class="btn hot" href="play.html"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>Open the game</a>
+            </div>
+            <ol>
+              <li>In <b>Safari</b>, tap <b>Open the game</b>.</li>
+              <li>Tap <b>Share</b> <span class="kbd">square with an arrow</span>. It is at the bottom on iPhone and at the top right on iPad.</li>
+              <li>Tap <b>Add to Home Screen</b>, then <b>Add</b>. Afterglow gets its own icon, opens full screen and plays offline.</li>
+            </ol>
+            <p class="why">Why is there no download? Apple only lets iPhone and iPad install apps from the App Store, so APK and EXE files cannot run there. The Home Screen app is the same game, and it works without a connection.</p>
+            <p class="req">iOS and iPadOS 16.4 or later.</p>
+          </article>
+
+          <article class="plat" id="plat-mac">
+            <span class="you">Your device</span>
+            <div class="plat-h">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H4zM2 19h20"/></svg></div>
+              <div><h3>Mac, Linux and Chromebook</h3><div class="kind">Desktop web app</div></div>
+            </div>
+            <div class="acts">
+              <button class="btn hot" id="install-btn" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg>Install Afterglow</button>
+              <a class="btn" id="mac-open" href="play.html"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>Open the game</a>
+            </div>
+            <ol>
+              <li><b>Safari on Mac:</b> open the game, then choose <b>File</b> and <b>Add to Dock</b>.</li>
+              <li><b>Chrome or Edge:</b> click <b>Install Afterglow</b> above, or the install icon at the right end of the address bar.</li>
+              <li>Launch it from the Dock, Launchpad or your app launcher. It runs in its own window.</li>
+            </ol>
+            <p class="req">macOS Sonoma or later for Add to Dock. Any recent Chrome or Edge for the rest.</p>
+          </article>
+        </div>
+
+        <div class="plate-foot">
+          <div>
+            <p id="rel-line">Every build comes straight from the game's source on GitHub.</p>
+            <p class="status" id="install-status" aria-live="polite"></p>
+          </div>
+          <div class="links">
+            <a class="btn sm" href="play.html" download="afterglow-offline.html">Single-file offline copy</a>
+            <a class="btn sm" href="https://github.com/count-halflight/AFTERGLOW/releases" id="all-rel">All releases</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><div class="eyebrow">Questions</div><h2>Before you climb</h2></div>
+      <div class="faq">
+        <details><summary>Is it free?</summary><p>Yes. Every world, mode and mechanic is free. Shards for the shop come from playing. The only ad is optional: you can watch one to revive and carry on from your last hold.</p></details>
+        <details><summary>Do I need an account?</summary><p>No. There is nothing to sign up for. Your records, shards and cosmetics are saved on your device.</p></details>
+        <details><summary>Why can't I install the APK on my iPhone or iPad?</summary><p>APK files only run on Android. Apple only allows App Store apps on iPhone and iPad, so there Afterglow installs from Safari as a Home Screen app. It is the same game, full screen and offline.</p></details>
+        <details><summary>Android or Windows warned me about the download. Is it safe?</summary><p>Yes. The warning appears for any app that does not come from the Play Store or carry a paid publisher certificate. Each file is built automatically from the public source code on GitHub.</p></details>
+        <details><summary>Does it work offline?</summary><p>Yes. The Android and Windows apps carry the whole game inside them. The Home Screen and desktop web apps save themselves the first time you open them.</p></details>
+        <details><summary>Which devices does it run on?</summary><p>Android 7 and later, Windows 10 and 11, iPhone and iPad on iOS 16.4 or later, Macs, Linux and Chromebooks. Any recent browser can also play it without installing.</p></details>
+        <details><summary>How do I move my progress to another device?</summary><p>Progress stays on the device you play on, so each device keeps its own save. On iPhone and iPad, install the Home Screen app first, then play there, because Safari and the Home Screen app keep separate saves.</p></details>
+        <details><summary>Who made it?</summary><p>Afterglow is made by Halflight.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="icons/icon-48.png" alt="" width="28" height="28">Afterglow</a>
+    <span>Made by Halflight. &copy; 2026 Halflight. <a href="https://github.com/count-halflight/AFTERGLOW">Source on GitHub</a></span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const REPO = 'count-halflight/AFTERGLOW';
+
+  // ---------- the synthwave sky behind the hero ----------
+  const cv = document.getElementById('sky'), g = cv.getContext('2d');
+  const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W = 0, H = 0, dpr = 1;
+  const embers = Array.from({ length: 40 }, () => ({ x: Math.random(), y: Math.random(), s: 0.4 + Math.random() * 1.2, p: Math.random() * 6.28 }));
+  function size() { const r = cv.getBoundingClientRect(); dpr = Math.min(2, window.devicePixelRatio || 1); W = cv.width = Math.max(2, r.width * dpr | 0); H = cv.height = Math.max(2, r.height * dpr | 0); }
+  function frame(t) {
+    t = (t || 0) / 1000;
+    const sky = g.createLinearGradient(0, 0, 0, H); sky.addColorStop(0, '#0b0620'); sky.addColorStop(0.55, '#1d0b40'); sky.addColorStop(1, '#2a0d4a');
+    g.fillStyle = sky; g.fillRect(0, 0, W, H);
+    // the sun, striped like an old arcade cabinet
+    const sx = W * 0.72, sy = H * 0.56, sr = Math.min(W, H) * 0.32;
+    g.save(); g.beginPath(); g.arc(sx, sy, sr, 0, Math.PI * 2); g.clip();
+    const sg = g.createLinearGradient(0, sy - sr, 0, sy + sr); sg.addColorStop(0, 'rgba(255,200,150,0.55)'); sg.addColorStop(0.5, 'rgba(255,79,216,0.42)'); sg.addColorStop(1, 'rgba(120,60,255,0.2)');
+    g.fillStyle = sg; g.fillRect(sx - sr, sy - sr, sr * 2, sr * 2);
+    g.globalCompositeOperation = 'destination-out'; for (let i = 0; i < 7; i++) { const y = sy + sr * 0.05 + i * sr * 0.14; g.fillRect(sx - sr, y, sr * 2, (3 + i * 2.4) * dpr); }
+    g.restore();
+    // the grid floor rolling toward you
+    const hz = H * 0.74; g.strokeStyle = 'rgba(255,79,216,0.28)'; g.lineWidth = 1.2 * dpr;
+    for (let i = -16; i <= 16; i++) { g.beginPath(); g.moveTo(W * 0.5 + i * W * 0.02, hz); g.lineTo(W * 0.5 + i * W * 0.14, H); g.stroke(); }
+    const off = still ? 0 : (t * 0.35) % 1;
+    for (let k = 0; k < 9; k++) { const f = (k + off) / 9, y = hz + (H - hz) * f * f; g.globalAlpha = 0.15 + 0.6 * f; g.beginPath(); g.moveTo(0, y); g.lineTo(W, y); g.stroke(); }
+    g.globalAlpha = 1;
+    const fade = g.createLinearGradient(0, hz - 30 * dpr, 0, hz + 40 * dpr); fade.addColorStop(0, 'rgba(42,13,74,0)'); fade.addColorStop(0.5, 'rgba(42,13,74,0.9)'); fade.addColorStop(1, 'rgba(42,13,74,0)'); g.fillStyle = fade; g.fillRect(0, hz - 30 * dpr, W, 70 * dpr);
+    // embers drifting up
+    for (const e of embers) {
+      const y = ((e.y - (still ? 0 : t * 0.02 * e.s)) % 1 + 1) % 1, x = e.x + Math.sin(t * 0.6 + e.p) * 0.01;
+      const r = (1.4 + e.s * 1.6) * dpr, gl = g.createRadialGradient(x * W, y * H, 0, x * W, y * H, r * 5);
+      gl.addColorStop(0, 'rgba(255,190,110,0.8)'); gl.addColorStop(1, 'rgba(255,190,110,0)'); g.fillStyle = gl; g.fillRect(x * W - r * 5, y * H - r * 5, r * 10, r * 10);
+    }
+    // a soft dark wash on the left so the words stay crisp
+    const wash = g.createLinearGradient(0, 0, W * 0.7, 0); wash.addColorStop(0, 'rgba(11,6,32,0.75)'); wash.addColorStop(1, 'rgba(11,6,32,0)'); g.fillStyle = wash; g.fillRect(0, 0, W, H);
+    if (!still) requestAnimationFrame(frame);
+  }
+  size(); addEventListener('resize', () => { size(); if (still) frame(0); }); requestAnimationFrame(frame);
+
+  // ---------- pick the right download for this device ----------
+  const ua = navigator.userAgent || '';
+  const iPadOS = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+  const os = /iPhone|iPod/.test(ua) ? 'iphone' : (/iPad/.test(ua) || iPadOS) ? 'ipad'
+    : /Android/.test(ua) ? 'android' : /Windows/.test(ua) ? 'windows' : /Macintosh/.test(ua) ? 'mac' : 'other';
+  const card = { iphone: 'plat-ios', ipad: 'plat-ios', android: 'plat-android', windows: 'plat-windows', mac: 'plat-mac', other: 'plat-mac' }[os];
+  const mine = document.getElementById(card);
+  mine.classList.add('mine');
+  if (os !== 'other') mine.parentNode.prepend(mine);
+
+  const heroBtn = document.getElementById('hero-get'), heroT = document.getElementById('hero-get-t'), heroNote = document.getElementById('hero-note');
+  const apk = document.querySelector('[data-dl="apk"]').href, setup = document.querySelector('[data-dl="setup"]').href;
+  const hero = {
+    android: ['Download for Android', apk, 'Free APK for Android 7.0 and later.'],
+    windows: ['Download for Windows', setup, 'Free installer for Windows 10 and 11.'],
+    iphone: ['Get it on iPhone', '#plat-ios', 'Installs from Safari onto your Home Screen.'],
+    ipad: ['Get it on iPad', '#plat-ios', 'Installs from Safari onto your Home Screen.'],
+    mac: ['Get it on Mac', '#plat-mac', 'Installs from Safari or Chrome into your Dock.'],
+  }[os];
+  if (hero) { heroT.textContent = hero[0]; heroBtn.href = hero[1]; heroNote.textContent = hero[2]; }
+
+  // ---------- show the latest version and file sizes from GitHub ----------
+  const mb = b => (b / 1048576).toFixed(b < 10485760 ? 1 : 0) + ' MB';
+  fetch('https://api.github.com/repos/' + REPO + '/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+    .then(r => r.ok ? r.json() : null)
+    .then(rel => {
+      if (!rel || !rel.assets) return;
+      const by = n => rel.assets.find(a => a.name === n);
+      const sizes = { apk: by('Afterglow.apk'), setup: by('Afterglow-Setup.exe'), portable: by('Afterglow-Portable.exe') };
+      for (const [k, a] of Object.entries(sizes)) { const el = document.querySelector('[data-size="' + k + '"]'); if (el && a) el.textContent = mb(a.size); }
+      const when = rel.published_at ? new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+      document.getElementById('rel-line').textContent = 'Latest version ' + (rel.name || rel.tag_name) + (when ? ', released ' + when : '') + '.';
+      if (rel.html_url) document.getElementById('all-rel').href = rel.html_url.replace(/\/tag\/.*$/, '');
+    })
+    .catch(() => {});
+
+  // ---------- one-click install where the browser supports it ----------
+  const btn = document.getElementById('install-btn'), status = document.getElementById('install-status');
+  let deferred = null;
+  addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferred = e; btn.hidden = false; });
+  btn.addEventListener('click', async () => {
+    if (!deferred) return;
+    deferred.prompt();
+    try { const r = await deferred.userChoice; status.textContent = r && r.outcome === 'accepted' ? 'Installed. Look for the Afterglow icon.' : 'No problem. You can install any time.'; } catch (e) { }
+    deferred = null; btn.hidden = true;
+  });
+  addEventListener('appinstalled', () => { status.textContent = 'Installed. Look for the Afterglow icon.'; btn.hidden = true; });
+
+  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+})();
+</script>
+</body>
+</html>

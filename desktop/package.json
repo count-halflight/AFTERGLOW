@@ -1,0 +1,51 @@
+{
+  "name": "afterglow",
+  "productName": "Afterglow",
+  "version": "1.0.0",
+  "description": "Afterglow by Halflight: fling an ember up a cave that never ends.",
+  "author": "Halflight",
+  "license": "UNLICENSED",
+  "repository": "https://github.com/count-halflight/AFTERGLOW",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "prepare-game": "node scripts/copy-game.js",
+    "start": "npm run prepare-game && electron .",
+    "dist": "npm run prepare-game && electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "44.4.5",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.halflight.afterglow",
+    "productName": "Afterglow",
+    "copyright": "Copyright © 2026 Halflight",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "app/**"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Afterglow",
+      "artifactName": "Afterglow-Setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "Afterglow-Portable.${ext}"
+    }
+  }
+}

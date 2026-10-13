@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Release signing comes from environment variables (set as GitHub Actions secrets).
+// Without them the release APK is signed with the debug key, which still installs fine
+// when sideloaded but cannot be updated in place by a build signed with a different key.
+def keystoreFile = System.getenv('ANDROID_KEYSTORE_FILE')
+def hasReleaseKey = keystoreFile != null && file(keystoreFile).exists()
+
+android {
+    namespace 'com.halflight.afterglow'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.halflight.afterglow'
+        minSdk 24
+        targetSdk 35
+        versionCode((project.findProperty('versionCode') ?: '1') as int)
+        versionName project.findProperty('versionName') ?: '1.0.0'
+    }
+
+    signingConfigs {
+        if (hasReleaseKey) {
+            release {
+                storeFile file(keystoreFile)
+                storePassword System.getenv('ANDROID_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('ANDROID_KEY_ALIAS')
+                keyPassword System.getenv('ANDROID_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig hasReleaseKey ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    sourceSets {
+        main {
+            assets.srcDirs += ["$buildDir/generated/game-assets"]
+        }
+    }
+}
+
+// The game itself lives in ../web/play.html; bundle it so the app plays fully offline.
+def copyGame = tasks.register('copyGame', Copy) {
+    from(rootProject.file('../web/play.html'))
+    into("$buildDir/generated/game-assets")
+}
+tasks.named('preBuild') { dependsOn copyGame }
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.12.1'
+    implementation 'androidx.core:core:1.13.1'
+}
