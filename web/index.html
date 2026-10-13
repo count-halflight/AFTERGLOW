@@ -154,6 +154,73 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
 footer .brand { font-size: 16px; color: var(--ink); }
 footer a { color: var(--dim); }
 
+/* ---------- polish ---------- */
+/* CRT scanlines over the hero, and a neon flicker on the logo */
+.hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 3px); }
+.hero::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; z-index: 1; background: linear-gradient(90deg, transparent, var(--magenta), var(--cyan), transparent); box-shadow: 0 0 18px var(--magenta); }
+.logo { animation: flicker 7s infinite; }
+@keyframes flicker { 0%, 90%, 92%, 95%, 100% { opacity: 1; } 91% { opacity: 0.72; } 94% { opacity: 0.86; } }
+
+/* header Instagram button */
+.iconlink { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 11px; border: 1px solid var(--glass-edge); background: var(--glass); color: var(--ink); transition: color 0.2s, border-color 0.2s, box-shadow 0.2s; }
+.iconlink:hover { color: #ff8fd2; border-color: rgba(255, 79, 216, 0.55); box-shadow: 0 0 18px rgba(255, 79, 216, 0.3); }
+.iconlink svg { width: 20px; height: 20px; }
+
+/* scoreboard strip under the hero */
+.stats-band { padding-block: clamp(28px, 4vw, 44px) 0; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--glass-edge); border-radius: 20px; background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)); overflow: hidden; }
+.stat { padding: 20px 22px; display: grid; gap: 6px; border-left: 1px solid var(--glass-edge); min-width: 0; }
+.stat:first-child { border-left: 0; }
+.stat b { font-family: var(--f-pixel); font-weight: 800; font-size: clamp(30px, 4vw, 44px); line-height: 1; background: linear-gradient(180deg, #fff 10%, #ffb35a 60%, #ff4fd8); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 14px rgba(255, 79, 216, 0.35)); }
+.stat span { color: var(--dim); font-size: 14.5px; line-height: 1.35; }
+
+/* scrolling marquee of worlds */
+.ticker { overflow: hidden; border-block: 1px solid var(--glass-edge); background: linear-gradient(90deg, rgba(255, 79, 216, 0.1), rgba(79, 227, 255, 0.08)); padding: 13px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.ticker-track { display: flex; gap: 28px; width: max-content; animation: tick 48s linear infinite; font-family: var(--f-pixel); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); white-space: nowrap; }
+.ticker-track i { font-style: normal; color: var(--ember); }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+/* cards light up like cabinet buttons */
+.feat, .step, .plat { transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; }
+.feat:hover { border-color: rgba(255, 79, 216, 0.5); transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 79, 216, 0.25), 0 0 40px rgba(255, 79, 216, 0.12); }
+.step:hover { border-color: var(--cyan); box-shadow: 0 0 34px rgba(79, 227, 255, 0.14); }
+.plat:not(.mine):hover { border-color: rgba(79, 227, 255, 0.45); }
+
+/* stage select: arrows, numbers and a neon frame on hover */
+.sec-row { display: flex; align-items: end; justify-content: space-between; gap: 16px; }
+.stage-nav { display: flex; gap: 8px; flex: 0 0 auto; }
+.stage-nav button { width: 46px; height: 46px; border-radius: 12px; border: 1px solid var(--glass-edge); background: var(--glass); color: var(--ink); cursor: pointer; display: grid; place-items: center; transition: border-color 0.2s, color 0.2s; }
+.stage-nav button:hover { border-color: var(--magenta); color: #ff8fd2; }
+.stage-nav svg { width: 20px; height: 20px; }
+.stages-wrap { position: relative; }
+.stages-wrap::after { content: ""; position: absolute; top: 0; right: 0; bottom: 22px; width: 60px; pointer-events: none; background: linear-gradient(90deg, transparent, var(--night)); }
+.stage .shot { position: relative; transition: border-color 0.3s, box-shadow 0.3s; }
+.stage:hover .shot { border-color: var(--magenta); box-shadow: 0 0 0 1px var(--magenta), 0 0 36px rgba(255, 79, 216, 0.35); }
+.stage .no { position: absolute; top: 10px; left: 10px; font-family: var(--f-pixel); font-size: 12px; padding: 3px 8px; border-radius: 7px; background: rgba(11, 6, 32, 0.75); border: 1px solid rgba(79, 227, 255, 0.4); color: var(--cyan); }
+
+/* Instagram card */
+.social { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: clamp(16px, 3vw, 28px); align-items: center; padding: clamp(22px, 4vw, 38px); border-radius: 24px; text-decoration: none; border: 1px solid rgba(255, 79, 216, 0.4);
+  background: radial-gradient(120% 160% at 0% 0%, rgba(255, 79, 216, 0.2), transparent 50%), radial-gradient(120% 160% at 100% 100%, rgba(255, 179, 90, 0.16), transparent 50%), rgba(11, 6, 32, 0.6); transition: transform 0.25s, box-shadow 0.25s; }
+.social:hover { transform: translateY(-2px); box-shadow: 0 22px 50px rgba(255, 79, 216, 0.2); }
+.social .ig { width: 88px; height: 88px; border-radius: 26px; display: grid; place-items: center; color: #fff; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); box-shadow: 0 12px 34px rgba(214, 36, 159, 0.45); }
+.social .ig svg { width: 48px; height: 48px; }
+.social h2 { font-size: clamp(26px, 4.2vw, 46px); margin: 8px 0 8px; overflow-wrap: anywhere; }
+.social .lead { font-size: 16px; }
+
+/* scroll reveal (added by script, so the page still shows without it) */
+.rv { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.rv.in { opacity: 1; transform: none; }
+
+/* phone-only download bar that follows you down the page */
+.dock-cta { display: none; }
+
+footer .wrap { align-items: center; }
+footer .socials { display: flex; align-items: center; gap: 14px; }
+footer .socials a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+footer .socials a:hover { color: #ff8fd2; }
+footer .socials svg { width: 18px; height: 18px; }
+
 @media (max-width: 860px) {
   .hero .wrap { grid-template-columns: minmax(0, 1fr); }
   .phone { width: min(290px, 74vw); }
@@ -161,11 +228,21 @@ footer a { color: var(--dim); }
   .faq { grid-template-columns: minmax(0, 1fr); }
   .bar nav { display: none; }
   .bar .wrap { gap: 10px; }
-  .bar .btn { margin-left: auto; }
+  .bar .iconlink { margin-left: auto; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(3) { border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--glass-edge); }
+  .social { grid-template-columns: minmax(0, 1fr); justify-items: start; }
+  .social .ig { width: 72px; height: 72px; border-radius: 22px; }
+  .social .ig svg { width: 40px; height: 40px; }
+  .stage-nav { display: none; }
+  .dock-cta { display: flex; position: fixed; left: 16px; right: 16px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 30; transform: translateY(160%); transition: transform 0.35s ease; }
+  .dock-cta.on { transform: none; }
+  .dock-cta .btn { width: 100%; min-height: 54px; }
 }
 @media (min-width: 861px) and (max-width: 1060px) { .feats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 420px) { .logo { font-size: 40px; } .ctas .btn { width: 100%; } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .stage .shot img { transition: none; } }
+@media (max-width: 420px) { .logo { font-size: 40px; } .ctas .btn { width: 100%; } .stat { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .stage .shot img, .feat, .social { transition: none; } .logo, .ticker-track { animation: none; } .rv { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
@@ -173,7 +250,8 @@ footer a { color: var(--dim); }
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="#top"><img src="icons/icon-96.png" alt="" width="34" height="34">Afterglow</a>
-    <nav aria-label="Sections"><a href="#worlds">Worlds</a><a href="#play">How to play</a><a href="#download">Download</a><a href="#faq">FAQ</a></nav>
+    <nav aria-label="Sections"><a href="#worlds">Worlds</a><a href="#play">How to play</a><a href="#download">Download</a><a href="#follow">Follow</a><a href="#faq">FAQ</a></nav>
+    <a class="iconlink" href="https://www.instagram.com/count_halflight/" target="_blank" rel="noopener" aria-label="Afterglow on Instagram, @count_halflight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
     <a class="btn hot sm" href="#download">Download</a>
   </div>
 </header>
@@ -200,6 +278,24 @@ footer a { color: var(--dim); }
     </div>
   </div>
 
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Neon Arcade</span><i>✦</i><span>Pinball Palace</span><i>✦</i><span>Midnight Carnival</span><i>✦</i><span>Golden Hive</span><i>✦</i><span>Glacier Heart</span><i>✦</i><span>Drowned Abyss</span><i>✦</i><span>Stormspire</span><i>✦</i><span>Glowcap Grotto</span><i>✦</i><span>Mistveil</span><i>✦</i><span>Verdant Veins</span><i>✦</i><span>Clockwork Spire</span><i>✦</i><span>Sunforge</span><i>✦</i><span>Lodestone</span><i>✦</i><span>Faultline</span><i>✦</i><span>Starwell</span><i>✦</i>
+      <span>Neon Arcade</span><i>✦</i><span>Pinball Palace</span><i>✦</i><span>Midnight Carnival</span><i>✦</i><span>Golden Hive</span><i>✦</i><span>Glacier Heart</span><i>✦</i><span>Drowned Abyss</span><i>✦</i><span>Stormspire</span><i>✦</i><span>Glowcap Grotto</span><i>✦</i><span>Mistveil</span><i>✦</i><span>Verdant Veins</span><i>✦</i><span>Clockwork Spire</span><i>✦</i><span>Sunforge</span><i>✦</i><span>Lodestone</span><i>✦</i><span>Faultline</span><i>✦</i><span>Starwell</span><i>✦</i>
+    </div>
+  </div>
+
+  <div class="stats-band">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><b>23</b><span>worlds, each with its own rules</span></div>
+        <div class="stat"><b>69</b><span>skins, hats, trails and pets</span></div>
+        <div class="stat"><b>1</b><span>new Daily climb every day</span></div>
+        <div class="stat"><b>0</b><span>accounts, sign-ups or costs</span></div>
+      </div>
+    </div>
+  </div>
+
   <section>
     <div class="wrap">
       <div class="sec-head">
@@ -220,11 +316,18 @@ footer a { color: var(--dim); }
 
   <section id="worlds" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head">
-        <div class="eyebrow">Stage select</div>
-        <h2>The cave changes as you climb</h2>
+      <div class="sec-head sec-row">
+        <div style="display:grid;gap:14px">
+          <div class="eyebrow">Stage select</div>
+          <h2>The cave changes as you climb</h2>
+        </div>
+        <div class="stage-nav">
+          <button type="button" id="st-prev" aria-label="Previous worlds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" id="st-next" aria-label="Next worlds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
       </div>
-      <div class="stages" tabindex="0" aria-label="Worlds">
+      <div class="stages-wrap">
+      <div class="stages" id="stages" tabindex="0" aria-label="Worlds">
         <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-arcade.webp" alt="The Neon Arcade" width="480" height="1039"></div><b>The Neon Arcade</b><span>Glitch blocks hop between spots on a beat.</span></figure>
         <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-pinball.webp" alt="The Pinball Palace" width="480" height="1039"></div><b>The Pinball Palace</b><span>Light all three targets to ring the jackpot.</span></figure>
         <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-carnival.webp" alt="The Midnight Carnival" width="480" height="1039"></div><b>The Midnight Carnival</b><span>Cannons lob balls across the shaft.</span></figure>
@@ -235,6 +338,7 @@ footer a { color: var(--dim); }
         <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-glowcap.webp" alt="Glowcap Grotto" width="480" height="1039"></div><b>Glowcap Grotto</b><span>Bounce the caps. Mind the spores.</span></figure>
         <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-mistveil.webp" alt="The Mistveil" width="480" height="1039"></div><b>The Mistveil</b><span>Trust the glow. The fog lies.</span></figure>
         <figure class="stage"><div class="shot"><img loading="lazy" src="img/world-verdant.webp" alt="The Verdant Veins" width="480" height="1039"></div><b>The Verdant Veins</b><span>Read the roots. Climb true.</span></figure>
+      </div>
       </div>
       <p class="more-worlds">Plus the Clockwork Spire, the Sunforge, the Lodestone, the Faultline, the Starwell and eight more.</p>
     </div>
@@ -350,6 +454,20 @@ footer a { color: var(--dim); }
     </div>
   </section>
 
+  <section id="follow" style="padding-top:0">
+    <div class="wrap">
+      <a class="social" href="https://www.instagram.com/count_halflight/" target="_blank" rel="noopener">
+        <div class="ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+        <div>
+          <div class="eyebrow" style="color:#ff8fd2">Follow the climb</div>
+          <h2>@count_halflight</h2>
+          <p class="lead">New worlds, high scores and behind-the-scenes from Halflight. Share your best climb and tag us.</p>
+        </div>
+        <span class="btn hot">Follow on Instagram</span>
+      </a>
+    </div>
+  </section>
+
   <section id="faq" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head"><div class="eyebrow">Questions</div><h2>Before you climb</h2></div>
@@ -361,7 +479,7 @@ footer a { color: var(--dim); }
         <details><summary>Does it work offline?</summary><p>Yes. The Android and Windows apps carry the whole game inside them. The Home Screen and desktop web apps save themselves the first time you open them.</p></details>
         <details><summary>Which devices does it run on?</summary><p>Android 7 and later, Windows 10 and 11, iPhone and iPad on iOS 16.4 or later, Macs, Linux and Chromebooks. Any recent browser can also play it without installing.</p></details>
         <details><summary>How do I move my progress to another device?</summary><p>Progress stays on the device you play on, so each device keeps its own save. On iPhone and iPad, install the Home Screen app first, then play there, because Safari and the Home Screen app keep separate saves.</p></details>
-        <details><summary>Who made it?</summary><p>Afterglow is made by Halflight.</p></details>
+        <details><summary>Who made it?</summary><p>Afterglow is made by Halflight. Follow along on Instagram at <a href="https://www.instagram.com/count_halflight/" target="_blank" rel="noopener">@count_halflight</a>.</p></details>
       </div>
     </div>
   </section>
@@ -370,9 +488,15 @@ footer a { color: var(--dim); }
 <footer>
   <div class="wrap">
     <a class="brand" href="#top"><img src="icons/icon-48.png" alt="" width="28" height="28">Afterglow</a>
-    <span>Made by Halflight. &copy; 2026 Halflight. <a href="https://github.com/count-halflight/AFTERGLOW">Source on GitHub</a></span>
+    <div class="socials">
+      <a href="https://www.instagram.com/count_halflight/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>@count_halflight</a>
+      <a href="https://github.com/count-halflight/AFTERGLOW">Source on GitHub</a>
+    </div>
+    <span>Made by Halflight. &copy; 2026 Halflight.</span>
   </div>
 </footer>
+
+<div class="dock-cta" id="dock-cta"><a class="btn hot" id="dock-btn" href="#download">Download free</a></div>
 
 <script>
 (() => {
@@ -461,6 +585,32 @@ footer a { color: var(--dim); }
     deferred = null; btn.hidden = true;
   });
   addEventListener('appinstalled', () => { status.textContent = 'Installed. Look for the Afterglow icon.'; btn.hidden = true; });
+
+  // ---------- stage select: number the worlds and scroll with the arrows ----------
+  const strip = document.getElementById('stages');
+  strip.querySelectorAll('.shot').forEach((s, i) => { const n = document.createElement('span'); n.className = 'no'; n.textContent = String(i + 1).padStart(2, '0'); s.appendChild(n); });
+  const step = () => (strip.querySelector('.stage').offsetWidth + 16) * 2;
+  document.getElementById('st-prev').addEventListener('click', () => strip.scrollBy({ left: -step(), behavior: still ? 'auto' : 'smooth' }));
+  document.getElementById('st-next').addEventListener('click', () => strip.scrollBy({ left: step(), behavior: still ? 'auto' : 'smooth' }));
+
+  // ---------- reveal sections as they scroll into view ----------
+  if (!still && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.sec-head, .stats, .feat, .step, .plat, .social, .faq details').forEach((el, i) => {
+      el.classList.add('rv'); el.style.transitionDelay = (i % 3) * 70 + 'ms'; io.observe(el);
+    });
+  }
+
+  // ---------- phones: a download bar once the hero is gone, hidden at the download section ----------
+  const dock = document.getElementById('dock-cta'), dockBtn = document.getElementById('dock-btn');
+  dockBtn.textContent = hero ? hero[0] : 'Download free';
+  dockBtn.href = hero ? hero[1] : '#download';
+  if ('IntersectionObserver' in window) {
+    let pastHero = false, atDownload = false;
+    const sync = () => dock.classList.toggle('on', pastHero && !atDownload);
+    new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; sync(); }).observe(document.querySelector('.hero'));
+    new IntersectionObserver(([e]) => { atDownload = e.isIntersecting; sync(); }).observe(document.getElementById('download'));
+  }
 
   if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 })();
