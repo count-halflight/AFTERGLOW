@@ -54,3 +54,9 @@ first time; players click **More info > Run anyway**. The website explains this.
 - **Android:** `cd android && ./gradlew assembleRelease` (needs the Android SDK; output in `app/build/outputs/apk/release/`).
 - **Windows:** `cd desktop && npm ci && npm run dist` on Windows (output in `desktop/dist/`). `npm start` runs it on any OS.
 - **Website:** serve `web/` with any static server, for example `npx http-server web`.
+
+## Copyright
+
+Copyright © 2026 Halflight. All rights reserved. The code is public so the game can be built and
+played, but it is not open source: you may not copy, modify, redistribute or sell any part of it
+without written permission. See [LICENSE](LICENSE).
